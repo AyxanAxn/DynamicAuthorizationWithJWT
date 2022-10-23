@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ayxan\\source\\repos\\TaskOfCrocusoft\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj": {}
+    "C:\\Users\\Ayxan\\source\\repos\\DynamicAuthorizationWithJWT\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ayxan\\source\\repos\\TaskOfCrocusoft\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj": {
+    "C:\\Users\\Ayxan\\source\\repos\\DynamicAuthorizationWithJWT\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ayxan\\source\\repos\\TaskOfCrocusoft\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj",
+        "projectUniqueName": "C:\\Users\\Ayxan\\source\\repos\\DynamicAuthorizationWithJWT\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj",
         "projectName": "TaskOfCrocusoft",
-        "projectPath": "C:\\Users\\Ayxan\\source\\repos\\TaskOfCrocusoft\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj",
+        "projectPath": "C:\\Users\\Ayxan\\source\\repos\\DynamicAuthorizationWithJWT\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj",
         "packagesPath": "C:\\Users\\Ayxan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ayxan\\source\\repos\\TaskOfCrocusoft\\TaskOfCrocusoft\\obj\\",
+        "outputPath": "C:\\Users\\Ayxan\\source\\repos\\DynamicAuthorizationWithJWT\\TaskOfCrocusoft\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"

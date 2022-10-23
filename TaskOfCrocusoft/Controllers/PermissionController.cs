@@ -18,7 +18,7 @@ namespace TaskOfCrocusoft.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePermissionsForRole(CreatePermissionRequest request)
         {
-            var response = _mediatR.Send(request);
+            var response =await _mediatR.Send(request);
             return Ok(response);
         }
 

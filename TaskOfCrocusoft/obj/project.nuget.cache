@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iyKKmAp8J8lXwbF4vxobL/pZMFY22sfgHq8uUUWRaWWuFPIjlKJwY2OvB8GDWCHmiGtnLt0/iyLdkIsTozawLg==",
+  "dgSpecHash": "h54lW9udbKJnT/r9cKMnIo5/d78p5/1YlWqmoHOoFmH3IXBUOtse4fYb90NJ19phji7VABvZjGzlC3s/84zmUA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ayxan\\source\\repos\\TaskOfCrocusoft\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj",
+  "projectFilePath": "C:\\Users\\Ayxan\\source\\repos\\DynamicAuthorizationWithJWT\\TaskOfCrocusoft\\TaskOfCrocusoft.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ayxan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Ayxan\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",

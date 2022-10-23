@@ -8,6 +8,8 @@ using CrocusoftTask.Repositories.Repository.UserRepository;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using TaskOfCrocusoft.Abstractions.Services;
+using TaskOfCrocusoft.Repositories.IRepository.IBookRepository;
+using TaskOfCrocusoft.Repositories.Repository.BookRepository;
 using TaskOfCrocusoft.Services.Token;
 
 namespace CrocusoftTask.ServiceConfig
@@ -26,6 +28,9 @@ namespace CrocusoftTask.ServiceConfig
 
             services.AddScoped<IPermissionReadRepository, PermissionReadRepository>();
             services.AddScoped<IPermissionWriteRepository, PermissionWriteRepository>();
+
+            services.AddScoped<IBookWriteRepository, BookWriteRepository>();
+            services.AddScoped<IBookReadRepository, BookReadRepository>();
 
             services.AddScoped<ITokenHandler, TokenHandler>();
             services.AddMediatR(typeof(ServiceRegistration));

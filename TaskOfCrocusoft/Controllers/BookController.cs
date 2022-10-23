@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using TaskOfCrocusoft.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using TaskOfCrocusoft.CQRS.Queries.BookQueries.GetAllBooks;
+using TaskOfCrocusoft.CQRS.Commands.BookCommands.CreateBookCommand;
+using TaskOfCrocusoft.CQRS.Commands.BookCommands.DeleteBookCommand;
+using TaskOfCrocusoft.CQRS.Commands.BookCommands.EditBookCommand;
 
 namespace TaskOfCrocusoft.Controllers
 {
@@ -11,31 +14,45 @@ namespace TaskOfCrocusoft.Controllers
     [Authorize]
     public class BookController : ControllerBase
     {
-        private readonly IConfiguration _config;
         private readonly IMediator _mediator;
 
         public BookController(IMediator mediator, IConfiguration configuration)
         {
             _mediator = mediator;
-            _config = configuration;
         }
 
         [HttpGet("GetAll")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "CanGet")]
-
-        public IActionResult GetBooks()
+        public async Task<IActionResult> GetBooks([FromQuery] GetAllBookQueriesRequest request)
         {
-            Book b = new();
-            b.Author = "Salam";
-            return Ok(b.Author);
+            var response = _mediator.Send(request);
+
+            return Ok(response);
+        }
+        [HttpPost("CreateBook")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "CanCreate")]
+        //[AllowAnonymous]
+        public async Task<IActionResult> CreateBooks(CreateBookCommandRequest request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
         }
 
-
-        [HttpPost("CreateItem")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "CanCreate")]
-        public async Task<IActionResult> CreateBooks()
+        [HttpDelete("Remove")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "CanDelete")]
+        //[AllowAnonymous]
+        public async Task<IActionResult> RemoveBooks(DeleteBookCommandRequest request)
         {
-            return Ok("I can create!");
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
+        [HttpPut("Update")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "CanUpdate")]
+        //[AllowAnonymous]
+        public async Task<IActionResult> UpdateBooks(EditBookCommandRequest request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
         }
     }
 }

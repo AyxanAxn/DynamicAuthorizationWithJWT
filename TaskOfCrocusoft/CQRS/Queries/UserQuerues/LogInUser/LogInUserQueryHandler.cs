@@ -42,7 +42,7 @@ namespace TaskOfCrocusoft.CQRS.Queries.UserQuerues.LogInUser
             };
 
             Token token = _tokenHandler.CreateAccessToken(500, userFromReq);
-            return new() { Token = token, CurrentUser = userData };
+            return new() { Token = token};
         }
     }
 }

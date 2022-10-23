@@ -26,20 +26,15 @@ namespace TaskOfCrocusoft.Services.Token
 
             if (userClaim.UserRoles is not null)
             {
-
                 List<string> allDatasAboutPermission = new();
-                foreach (var item in userClaim.UserRoles)
+                foreach (var user in userClaim.UserRoles)
                 {
-                    if (!allDatasAboutPermission.Contains(item.Role.RoleName))
+                    if (!allDatasAboutPermission.Contains(user.Role.RoleName))
                     {
-                        allDatasAboutPermission.Add(item.Role.RoleName);
-                        claim.Add(new Claim(ClaimTypes.Role, item.Role.RoleName));
+                        allDatasAboutPermission.Add(user.Role.RoleName);
+                        claim.Add(new Claim(ClaimTypes.Role, user.Role.RoleName));
                     }
-                }
-                allDatasAboutPermission.Clear();
-                foreach (var userRole in userClaim.UserRoles)
-                {
-                    foreach (var rolePermission in userRole.Role.RolePermissions)
+                    foreach (var rolePermission in user.Role.RolePermissions)
                     {
                         if (!allDatasAboutPermission.Contains(rolePermission.Permission.Title))
                         {
@@ -48,11 +43,9 @@ namespace TaskOfCrocusoft.Services.Token
                         }
                     }
                 }
+                allDatasAboutPermission.Clear();
             }
-
-
-
-
+            
             SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(_configuration["Token:SecurityKey"]));
             SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
             token.Expiration = DateTime.UtcNow.AddMinutes(minute);

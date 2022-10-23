@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CQRS\Queries\RoleQueries\GetRolesByUserId\**" />
+    <Content Remove="CQRS\Queries\RoleQueries\GetRolesByUserId\**" />
+    <EmbeddedResource Remove="CQRS\Queries\RoleQueries\GetRolesByUserId\**" />
+    <None Remove="CQRS\Queries\RoleQueries\GetRolesByUserId\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
@@ -24,10 +31,6 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.24.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.24.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CQRS\Queries\RoleQueries\GetRolesByUserId\" />
   </ItemGroup>
 
 </Project>

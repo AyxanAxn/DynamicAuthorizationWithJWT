@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskOfCrocusoft.CQRS.Commands.UserCommands.CreateUser;
 using TaskOfCrocusoft.CQRS.Queries.UserQuerues.LogInUser;
-using TaskOfCrocusoft.SeedData;
 
 namespace TaskOfCrocusoft.Controllers
 {
@@ -19,8 +18,7 @@ namespace TaskOfCrocusoft.Controllers
             _config = config;
             _mediator = mediator;
         }
-        [HttpPost]
-
+        [HttpPost("SignUp")]
         public async Task<IActionResult> CreateUser(CreateUserRequest request)
         {
             CreateUserResponse response = await _mediator.Send(request);
@@ -30,7 +28,7 @@ namespace TaskOfCrocusoft.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> LogIn(LogInUserQueryRequest request)
         {
-            
+
             LogInUserQueryResponse response = await _mediator.Send(request);
             return Ok(response);
         }

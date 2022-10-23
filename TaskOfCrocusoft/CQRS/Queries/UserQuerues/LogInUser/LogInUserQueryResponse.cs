@@ -7,6 +7,5 @@ namespace TaskOfCrocusoft.CQRS.Queries.UserQuerues.LogInUser
     {
         public Token Token { get; set; }
 
-        public User CurrentUser { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace TaskOfCrocusoft.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> CreateRole(CreateRoleRequest request)
         {
-            var response = _mediatR.Send(request);
+            var response = await _mediatR.Send(request);
             return Ok(response);
         }
 
