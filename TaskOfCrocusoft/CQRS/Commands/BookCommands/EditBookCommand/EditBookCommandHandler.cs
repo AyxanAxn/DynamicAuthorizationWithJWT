@@ -19,7 +19,7 @@ namespace TaskOfCrocusoft.CQRS.Commands.BookCommands.EditBookCommand
         public async Task<EditBookCommandResponse> Handle(EditBookCommandRequest request, CancellationToken cancellationToken)
         {
             var bookForEdit = await _bookReadRepository.GetByIdAsync((request.Id).ToString());
-            if (request is null)
+            if (bookForEdit is null)
                 return new() { Message = "Something went wrong" };
 
             bookForEdit.PageCount = request.PageCount;
